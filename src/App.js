@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { v4 } from 'uuid';
 import AddColorForm from './components/AddColorForm';
 import ColorList from './components/ColorList';
+import CountryList from './components/CountryList';
+import colors from './data/colors';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colors: []
+      colors: colors.colors
     };
     this.addColor = this.addColor.bind(this);
     this.rateColor = this.rateColor.bind(this);
@@ -51,10 +53,11 @@ class App extends Component {
     const { colors } = this.state;
     return (
       <div className="app">
-        <AddColorForm onNewColor={addColor} />
+        {/* <AddColorForm onNewColor={addColor} />
         <ColorList colors={colors}
                    onRate={rateColor}
-                   onRemove={removeColor} />
+                   onRemove={removeColor} /> */}
+        <CountryList />
       </div>
     );
   }
